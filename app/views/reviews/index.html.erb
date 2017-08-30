@@ -1,0 +1,16 @@
+<h2>Listing reviews</h2>
+<%if @reviews.empty? %>
+	<p>No Reviews Found</p>
+	<%else%>
+	<ul>
+	<% @reviews.each do |review|%>
+	<li>
+	<p> User:<%= review.user_id %></p>
+	<p> Product:<%= review.product_id%></p>
+	<p> Body<%= review.body%></p>
+	<p> rating<%= review.rating%></p>
+	</li>
+	<%end%>
+	</ul>
+	<%end%>
+	<%= link_to "add review", reviews_path %>

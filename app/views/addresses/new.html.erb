@@ -1,0 +1,23 @@
+<h2>Add Address</h2>
+
+<%= form_for @address do |f|%>
+<%if @address.errors.any? %>
+<%= @address.errors.full_messages.each do |f| %>
+<%= f %>
+<% end %>
+
+	<label>Street: </label> <br/>
+	<%= f.text_field :street,autofocus: true %> <br/>
+
+	<label>Pin: </label> <br/>
+	<%=f.number_field :city %> <br/>
+
+
+	<label>city: </label> <br/>
+	<%= f.text_field :city %> <br/>
+	<label>Landmark: </label> <br/>
+	<%= f.text_field :landmark %><br/>
+
+	<%= f.submit%> or <%= link_to"back",addresses_path %>
+	<% end %>
+	<% end %>

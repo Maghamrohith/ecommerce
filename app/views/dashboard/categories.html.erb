@@ -1,0 +1,25 @@
+<h2>Dash board Categories</h2>
+<% data = {} %>
+
+<h3>Distriburion of products across categories </h3>
+<% @categories.each do |category| %>
+ <% data[category.name] = category.products.length %>
+ <% end %>
+
+
+ <%= pie_chart(data) %>
+ <%= column_chart(data) %>
+ <%= bar_chart(data) %>
+ <%= line_chart(data) %>
+
+ <h3> Sale of products by categories </h3>
+
+ <% data_sales = {} %>
+ <% @categories.each do |category| %>
+ <% data_sales[category.name] = OrderLineItem.joins(:product).where('products.category_id = ?', category.id ).length %>
+ <% end %>
+
+ <%= column_chart(data_sales) %>
+
+ <h3> Total sale amount across categories </h3>
+ 

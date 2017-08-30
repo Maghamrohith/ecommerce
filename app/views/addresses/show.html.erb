@@ -1,0 +1,11 @@
+<h2><%= @address.name %></h2>
+
+<p>Name: <%= @address.user.name %></p>
+<p>Street: <%= @address.street %></p>
+<p>Pin: <%= @address.pin%></p>
+<p>City: <%= @address.city%></p>
+<p>Landmark: <%= @address.landmark%> </p>
+
+<%= link_to "edit", edit_address_path%>
+
+<%= link_to "delete",address_path(@address),method: :delete %>

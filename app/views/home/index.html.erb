@@ -1,0 +1,42 @@
+<h2> welcome to our website </h2>
+
+<!--
+<%= %> is embedded ruby tag inside html used for presentation
+
+<% %> is embedded ruby tag inside html used for rvaluation
+-->
+2 +2 : <%= 2 + 2 %> <!-- commr ting in html -->
+<% names = ["ramesh", "suresh", "veersh", "ganesh"] %>
+<ul> <!-- unorderd list -->
+<li>virat</li>
+<li>dhoni</li>
+</ul>
+
+<ol> <!-- orderd list -->
+<li>apple</li>
+<li>samsung</li>
+<li>oneplus</li>
+<li>mi</li>
+<ol>
+
+<h3>Listing names</h3>
+<ol>
+<% names .each do |name| %>
+	<li><%= name.capitalize %></li>
+	<% end %>
+	</ol>
+
+
+	<% companies = [] %>
+	<% if companies.empty? %>
+	<p> Companies not found </p>
+	<% else %>
+	<h3>Listing Companies</h3>
+	<ol>
+	<% companies.each do |company| %>
+	<li><%= company %></li>
+	<% end %>
+    </ol>
+    <% end %>
+<a href = "/home/about"> About</a>
+<%= link_to"About(ror)",home_about_path %>
